@@ -43,8 +43,12 @@ class BudgetManager:
             print('Расходов пока нет!')
         for category_name, total_amount in report_data:
             print(f"Категория {category_name} составила общую сумму в {total_amount} рублей.")
+    
+    def close_connection(self):
+        self.conn.close()
+        
 if __name__ == '__main__':
-    bm = BudgetManager()
+    #проверка работы
     manager = BudgetManager()
     manager.add_category("Еда")
     manager.add_category("Игры")
